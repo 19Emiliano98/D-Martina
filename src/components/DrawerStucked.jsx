@@ -28,7 +28,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles({
     drawerPaper: {
-        marginTop: "92px"
+        marginTop: "5.76rem"
     }
 });
 

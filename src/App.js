@@ -1,6 +1,7 @@
 //import { Pagination } from '@mui/material';
-import Navbar from './components/Navbar';
-import Drawerstucked from './components/DrawerStucked';
+import Navbar from './components/Navbar.jsx';
+import Drawerstucked from './components/DrawerStucked.jsx';
+import SearchBar from './components/tools/SearchBar.jsx'
 
 import Box from '@mui/material/Box';
 
@@ -9,6 +10,7 @@ function App() {
     <Box>
       <Navbar />
       <Drawerstucked />
+      <SearchBar />
       {/* <Pagination /> */}
     </Box>
   );
