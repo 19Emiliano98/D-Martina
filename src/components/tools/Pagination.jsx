@@ -4,8 +4,14 @@ import Stack from '@mui/material/Stack';
 
 export default function PaginationRounded() {
     return (
-        <Stack spacing={2}>
-            <Pagination count={2} variant="outlined" shape="rounded" />
+        <Stack 
+            sx={{ 
+                display: 'flex', alignItems: 'center',
+                mt:4, ml: 26
+            }}
+            spacing={10}
+        >
+            <Pagination count={10} variant="outlined" shape="rounded" />
         </Stack>
     );
 }

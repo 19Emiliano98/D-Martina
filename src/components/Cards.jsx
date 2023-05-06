@@ -11,21 +11,24 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 export default function ImgMediaCard() {
-    return (
-        <Box sx={{
-            display: 'flex', justifyContent: 'center',
-            mt: 8,
-        }}>
-            <Card sx={{ maxWidth: 345 }}>
+    const test = [ 'Iguana', 'Perro', 'Gato', 'Hongo', 'Plato', 'Yory', 'Maxy', 'Rodri' ];
+    const cantP = [];
+
+    for (let i = 0; i < test.length; i++) {
+        cantP.push(
+            <Card sx={{ 
+                    width: 260,
+                    mr:2.5, mb: 2.5
+                }}>
                 <CardMedia
                     component="img"
-                    alt="green iguana"
+                    alt={test[i]}
                     height="140"
                     image="/static/images/cards/contemplative-reptile.jpg"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                    Nombre del Producto
+                        {test[i]}
                     </Typography>
                 </CardContent>
                 <CardActions>
@@ -33,6 +36,16 @@ export default function ImgMediaCard() {
                     <Button size="small">Learn More</Button>
                 </CardActions>
             </Card>
+        );
+    }
+
+
+    return (
+        <Box sx={{
+            display: 'flex', justifyContent: 'center', flexWrap: 'wrap',
+            mt: 8, ml: 29
+        }}>
+            {cantP}
         </Box>
     );
 }
