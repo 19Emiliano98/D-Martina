@@ -9,7 +9,7 @@ export default function BasicTextFields() {
         sx={{
             display: 'flex',
             justifyContent: 'center',
-            '& > :not(style)': { mt: 4, ml: 30, width: '50%', height: '48px' },
+            '& > :not(style)': { mt: 2, ml: 30, width: '50%', height: '48px' },
         }}
         noValidate
         autoComplete="off"

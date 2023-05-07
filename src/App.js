@@ -1,19 +1,34 @@
-import Navbar from './components/Navbar.jsx';
-import Drawerstucked from './components/DrawerStucked.jsx';
-import SearchBar from './components/tools/SearchBar.jsx';
-import Cards from './components/Cards.jsx';
-import Pagination from './components/tools/Pagination.jsx';
+import * as React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from './Routes/Home.jsx';
+import NotFound from './Routes/NotFound.jsx';
 
 import Box from '@mui/material/Box';
+import Navbar from './components/Navbar.jsx';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    button: {
+      textTransform: 'none'
+    }
+  }
+});
 
 function App() {
   return (
     <Box>
-      <Navbar />
-      <Drawerstucked />
-      <SearchBar />
-      <Cards />
-      <Pagination />
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/inicio" element={<Home />}/>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </Box>
   );
 }
