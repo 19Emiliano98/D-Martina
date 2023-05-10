@@ -9,7 +9,12 @@ function Home() {
     return (
         <Box>
             <Drawerstucked />
-            <TitleBorder content={"Productos destacados"}/>
+            <Box sx={{
+                display: 'flex', justifyContent: 'center',
+                mt: 3, ml: 23
+            }}>
+                <TitleBorder content={"Productos destacados"}/>
+            </Box>
             <Cards />
             <Pagination />
         </Box>

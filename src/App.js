@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from './Routes/Home.jsx';
 import SobreNosotros from './Routes/SobreNosotros.jsx';
+import Contacto from './Routes/Contacto.jsx';
 //import NotFound from './Routes/NotFound.jsx';
 
 import Box from '@mui/material/Box';
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/inicio" element={<Home />}/>
             <Route path="/nosotros" element={<SobreNosotros />}/>
+            <Route path="/contacto" element={<Contacto />}/>
             <Route path="*" element={<Navigate to='/inicio' />} />
           </Routes>
         </BrowserRouter>

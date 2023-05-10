@@ -78,14 +78,16 @@ export default function PermanentDrawerLeft() {
                     </Link>
                 </List>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <MailIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Contacto' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link to="/contacto">
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <MailIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Contacto' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
             <Divider />
                 <List>

@@ -12,16 +12,11 @@ export default function TitleBorder(content) {
     return (
     <Box
         component="form"
-        sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            mt: '1%', ml: '10%',
-        }}
         noValidate
         autoComplete="off"
         >
         <Card sx={{ 
-            width: 800, height: 35, 
+            width: 800, height: 35,
             pb: 2,
             boxShadow: 3, borderRadius: '5px'
         }}>
