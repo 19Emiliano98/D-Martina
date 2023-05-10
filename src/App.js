@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from './Routes/Home.jsx';
-import NotFound from './Routes/NotFound.jsx';
+import SobreNosotros from './Routes/SobreNosotros.jsx';
+//import NotFound from './Routes/NotFound.jsx';
 
 import Box from '@mui/material/Box';
 import Navbar from './components/Navbar.jsx';
@@ -25,7 +26,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/inicio" element={<Home />}/>
-            <Route path="*" element={<NotFound />} />
+            <Route path="/nosotros" element={<SobreNosotros />}/>
+            <Route path="*" element={<Navigate to='/inicio' />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

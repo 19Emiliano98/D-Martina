@@ -1,5 +1,5 @@
 import Drawerstucked from '../components/DrawerStucked.jsx';
-import SearchBar from '../components/tools/SearchBar.jsx';
+import TitleBorder from '../components/tools/TitleBorder.jsx';
 import Cards from '../components/Cards.jsx';
 import Pagination from '../components/tools/Pagination.jsx';
 
@@ -9,7 +9,7 @@ function Home() {
     return (
         <Box>
             <Drawerstucked />
-            <SearchBar />
+            <TitleBorder content={"Productos destacados"}/>
             <Cards />
             <Pagination />
         </Box>

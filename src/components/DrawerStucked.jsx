@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 import Box from '@mui/material/Box';
@@ -52,24 +54,28 @@ export default function PermanentDrawerLeft() {
             >
             <Divider />
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <HomeIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Inicio' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link to="/inicio">
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <HomeIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Inicio' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <AutoAwesomeIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Sobre Nosotros' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link to="/nosotros">
+                        <ListItem disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        <AutoAwesomeIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary='Sobre Nosotros' />
+                                </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
                 <List>
                     <ListItem disablePadding>

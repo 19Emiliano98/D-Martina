@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export default function ImgMediaCard() {
-    const test = [ 'Iguana', 'Perro', 'Gato', 'Hongo', 'Plato', 'Yory', 'Maxy', 'Rodri' ];
+    const test = [ 'Iguana', 'Perro', 'Gato', 'Hongo', 'Plato', 'Yory', 'Maxy', 'Rodri', 'Kevin', 'Lucas' ];
     const cantP = [];
 
     for (let i = 0; i < test.length; i++) {
