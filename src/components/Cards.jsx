@@ -53,7 +53,7 @@ export default function ImgMediaCard() {
                             </Button>
                         </CardActions>
                         <CardActions>
-                            <Button sx={{ color: '#241623' }} size="small">Detalles</Button>
+                            <Button href="/detalles" sx={{ color: '#241623' }} size="small">Detalles</Button>
                         </CardActions>
                     </Box>
                 </Card>

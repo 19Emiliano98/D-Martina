@@ -29,6 +29,7 @@ export default function ContainedButtons() {
                     backgroundColor: 'white', color: 'black'
                 }} 
                 variant="contained"
+                href="/inicio"
             >
                 <ArrowBackIcon />
             </Button>

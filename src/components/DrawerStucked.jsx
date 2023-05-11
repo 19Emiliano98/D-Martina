@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
+import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -30,7 +30,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles({
     drawerPaper: {
-        marginTop: "5.76rem"
+        marginTop: "3.90rem"
     }
 });
 
@@ -54,7 +54,7 @@ export default function PermanentDrawerLeft() {
             >
             <Divider />
                 <List>
-                    <Link to="/inicio">
+                    <Link href="/inicio" style={{ textDecoration: 'none', color: 'black' }}>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -66,7 +66,7 @@ export default function PermanentDrawerLeft() {
                     </Link>
                 </List>
                 <List>
-                    <Link to="/nosotros">
+                    <Link href="/nosotros" style={{ textDecoration: 'none', color: 'black' }}>
                         <ListItem disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
@@ -78,7 +78,7 @@ export default function PermanentDrawerLeft() {
                     </Link>
                 </List>
                 <List>
-                    <Link to="/contacto">
+                    <Link href="/contacto" style={{ textDecoration: 'none', color: 'black' }}>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>

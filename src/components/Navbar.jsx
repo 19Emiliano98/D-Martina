@@ -20,7 +20,7 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={theme}>
-        <AppBar position="static">
+        <AppBar sx={{ height: 62 }} position="static">
           <Toolbar>
             <IconButton
               size="large"
@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              <Avatar src={logo} sx={{ width: 68, height: 68 }}/>
+              <Avatar src={logo} sx={{ width: 55, height: 55, mt: -0.5 }}/>
             </IconButton>
           </Toolbar>
         </AppBar>
