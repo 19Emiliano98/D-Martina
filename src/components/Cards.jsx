@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export default function ImgMediaCard() {
-    const [users, setUsers] = useState([]);
+    const [productos, setProductos] = useState([]);
     
     async function fetchDemo() {
         return fetch("https://dmartinablancohogar.com.ar/apiv2/productos/")
@@ -23,16 +23,18 @@ export default function ImgMediaCard() {
     
     useEffect(() => {
         fetchDemo().then(function(result) {
-            setUsers(result.data.producto)
+            setProductos(result.data.producto)
         });
     }, []);
     
+    console.log(productos);
+
     return (
         <Box sx={{
             display: 'flex', justifyContent: 'center', flexWrap: 'wrap',
             mt: 4, ml: 29
         }}>
-            {users.map(block => 
+            {productos.map(p => 
                 <Card sx={{ 
                     width: 260,
                     mr:2.5, mb: 2.5,
@@ -40,13 +42,13 @@ export default function ImgMediaCard() {
                 }}>
                     <CardMedia
                         component="img"
-                        alt={block.prod_nombre}
+                        alt={p.prod_nombre}
                         height="140"
                         image="/static/images/cards/contemplative-reptile.jpg"
                     />
                     <CardContent sx={{ display:'flex', justifyContent: 'center' }}>
                         <Typography variant="h6" component="div">
-                            {block.prod_nombre}
+                            {p.prod_nombre}
                         </Typography>
                     </CardContent>
                     <Box sx={{ 
