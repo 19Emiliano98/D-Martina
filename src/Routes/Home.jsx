@@ -1,7 +1,6 @@
 import Drawerstucked from '../components/DrawerStucked.jsx';
 import TitleBorder from '../components/tools/TitleBorder.jsx';
 import Cards from '../components/Cards.jsx';
-import Pagination from '../components/tools/Pagination.jsx';
 
 import Box from '@mui/material/Box';
 
@@ -16,7 +15,6 @@ function Home() {
                 <TitleBorder content={"Productos destacados"}/>
             </Box>
             <Cards />
-            <Pagination />
         </Box>
     );
 }

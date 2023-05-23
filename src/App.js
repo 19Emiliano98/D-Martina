@@ -5,7 +5,6 @@ import Home from './Routes/Home.jsx';
 import Detalles from './Routes/Detalles.jsx';
 import SobreNosotros from './Routes/SobreNosotros.jsx';
 import Contacto from './Routes/Contacto.jsx';
-//import NotFound from './Routes/NotFound.jsx';
 
 import Box from '@mui/material/Box';
 import Navbar from './components/Navbar.jsx';
