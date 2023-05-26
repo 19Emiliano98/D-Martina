@@ -25,12 +25,10 @@ export default function ImgMediaCard() {
     
     const totalPages = Math.ceil(products.length / itemsPerPage);
     
-    // Obtener los elementos para la página actual
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
     
-    // Función para cambiar de página
     const handlePageChange = (event, page) => {
         setCurrentPage(page);
     };
