@@ -11,6 +11,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
+let cantPages = 0;
+const pageSize = 10;
+
 export default function ImgMediaCard() {
     const [products, setProducts] = useState([]);
     
@@ -26,8 +29,28 @@ export default function ImgMediaCard() {
             setProducts(result.data.producto)
         });
     }, []);
-
-    const cardsRender = products.map(p => 
+    
+    
+    const [ pagination, setPagination ] = useState({
+        count: 0,
+        from: 0,
+        to: pageSize
+    })
+    
+    const data = products.slice( pagination.from, pagination.to);
+    
+    const pagesCalculator = () =>{
+        const real = Math.fround(products.length / pageSize);
+        const integer = Math.floor(products.length / pageSize);
+        
+        if( real > integer ){
+            cantPages = integer + 1;
+        }
+    }
+    
+    pagesCalculator();
+    
+    const cardsRender = data.map(p => 
         <Card sx={{ 
             width: 260,
             mr:2.5, mb: 2.5,
@@ -69,19 +92,7 @@ export default function ImgMediaCard() {
             </Box>
         </Card>
     )
-
-    const pageSize = 6;
     
-    const [ pagination, setPagination ] = useState({
-        count: 0,
-        from: 0,
-        to: pageSize
-    })
-
-    const data = products.slice( pagination.from, pagination.to);
-    const count = products.length;
-
-
     return (
         <Box>
             <Box sx={{
@@ -93,7 +104,7 @@ export default function ImgMediaCard() {
             <Box sx={{
                 display: 'flex', justifyContent: 'center'
             }}>
-                <Pagination data={data} count={count}/>
+                <Pagination cantPages={cantPages}/>
             </Box>
         </Box>
     );
