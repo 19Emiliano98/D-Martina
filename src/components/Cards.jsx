@@ -11,10 +11,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-const pageSize = 10;
-
 export default function ImgMediaCard() {
     const [products, setProducts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
     
     async function getProducts() {
         return fetch("https://dmartinablancohogar.com.ar/apiv2/productos/")
@@ -23,34 +23,33 @@ export default function ImgMediaCard() {
             })
         }
     
-    const [ pagination, setPagination ] = useState({
-        count: products.length,
-        from: 0,
-        to: pageSize
-    })
+    const totalPages = Math.ceil(products.length / itemsPerPage);
+    
+    // Obtener los elementos para la página actual
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+    
+    // Función para cambiar de página
+    const handlePageChange = (event, page) => {
+        setCurrentPage(page);
+    };
     
     useEffect(() => {
         getProducts().then(function(result) {
             setProducts(result.data.producto)
         });
-    }, [pagination.from, pagination.to]);
+    }, []);
     
-    const data = products.slice( pagination.from, pagination.to );
-    const cantPages = Math.ceil(products.length / pageSize);
-    
-    const handlePageChange = ( event, page ) => {
-        const from = (page - 1) * pageSize;
-        const to = (page - 1) * pageSize + pageSize;
-
-        setPagination({ ...pagination, from: from, to: to })
-    }
-
-    const cardsRender = data.map(p => 
-        <Card sx={{ 
-            width: 260,
-            mr:2.5, mb: 2.5,
-            background: '#D0CD9466'
-        }}>
+    const cardsRender = currentItems.map(( p, index ) => 
+        <Card 
+            sx={{ 
+                width: 260,
+                mr:2.5, mb: 2.5,
+                background: '#D0CD9466'
+            }}
+            key={index}
+        >
             <CardMedia
                 component="img"
                 alt={p.prod_nombre}
@@ -99,7 +98,11 @@ export default function ImgMediaCard() {
             <Box sx={{
                 display: 'flex', justifyContent: 'center'
             }}>
-                <Pagination onChange={handlePageChange} cantPages={cantPages}/>
+                <Pagination 
+                    count={totalPages}
+                    page={currentPage}
+                    onChange={handlePageChange}
+                />
             </Box>
         </Box>
     );

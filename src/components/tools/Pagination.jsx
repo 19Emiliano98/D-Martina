@@ -5,7 +5,7 @@ import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
 
 export default function Pages( data ) {
-    const { cantPages } = data;
+    const { count, onChange } = data;
     
     return (
         <Box 
@@ -14,7 +14,13 @@ export default function Pages( data ) {
                 ml: 26
             }}
         >
-            <Pagination count={cantPages} variant="outlined" shape="rounded" />
+            <Pagination 
+                count={count}
+                defaultPage={1}
+                onChange={onChange}
+                variant="outlined" 
+                shape="rounded" 
+            />
         </Box>
     );
 }
