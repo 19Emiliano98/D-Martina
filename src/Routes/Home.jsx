@@ -1,4 +1,4 @@
-import Drawerstucked from '../components/DrawerStucked.jsx';
+//import Drawerstucked from '../components/DrawerStucked.jsx';
 import TitleBorder from '../components/tools/TitleBorder.jsx';
 import Cards from '../components/Cards.jsx';
 
@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 function Home() {
     return (
         <Box>
-            <Drawerstucked />
+            {/* <Drawerstucked /> */}
             <Box sx={{
                 display: 'flex', justifyContent: 'center',
                 mt: 3, ml: 23

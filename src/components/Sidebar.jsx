@@ -1,20 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-
-//import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Link from '@mui/material/Link';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
+import AppBar from '@material-ui/core/AppBar';
+import List from '@material-ui/core/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@mui/material/Divider';
 
-/* -------------- */
-/* ----Icons----- */
-/* -------------- */
+import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import MailIcon from '@mui/icons-material/Mail';
@@ -23,40 +18,38 @@ import BedIcon from '@mui/icons-material/Bed';
 import CabinIcon from '@mui/icons-material/Cabin';
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-/* -------------- */
-
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex', position: "absolute",
+        paddingBottom: 150,
+        borderRight: "1px solid black"
+    },
+    appBar: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
+    },
+    drawer: {
+        width: drawerWidth,
+        flexShrink: 0,
+    },
     drawerPaper: {
-        marginTop: "3.90rem",
-        marginBottom: "3.90rem"
-    }
-});
+        width: drawerWidth,
+    },
+    toolbar: theme.mixins.toolbar,
+}));
 
-
-export default function PermanentDrawerLeft() {
+const Sidebar = () => {
     const classes = useStyles();
-    
+
     return (
-            <Drawer
-                classes={{ paper: classes.drawerPaper }}
-                sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'content-box',
-                    },
-                }}
-                variant="permanent"
-                anchor="left"
-            >
-            <Divider />
+        <div className={classes.root}>
+            <div className={classes.drawer}>
                 <List>
                     <Link href="/inicio" style={{ textDecoration: 'none', color: 'black' }}>
-                        <ListItem disablePadding>
+                        <ListItem button>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <HomeIcon />
@@ -90,7 +83,7 @@ export default function PermanentDrawerLeft() {
                         </ListItem>
                     </Link>
                 </List>
-            <Divider />
+                <Divider />
                 <List>
                     <ListItem disablePadding>
                         <ListItemButton>
@@ -141,6 +134,13 @@ export default function PermanentDrawerLeft() {
                         </ListItemButton>
                     </ListItem>
                 </List>
-            </Drawer>
+            </div>
+            <AppBar position="fixed" className={classes.appBar}>
+                {/* Contenido de la barra superior */}
+            </AppBar>
+        </div>
     );
-}
+};
+
+export default Sidebar;
+

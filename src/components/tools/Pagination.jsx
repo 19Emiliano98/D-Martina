@@ -11,7 +11,7 @@ export default function Pages( data ) {
         <Box 
             sx={{ 
                 display: 'flex', alignItems: 'center',
-                ml: 26
+                ml: 26, mt: 2
             }}
         >
             <Pagination 
