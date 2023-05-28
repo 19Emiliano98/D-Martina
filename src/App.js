@@ -8,6 +8,12 @@ import Detalles from './Routes/Detalles.jsx';
 import SobreNosotros from './Routes/SobreNosotros.jsx';
 import Contacto from './Routes/Contacto.jsx';
 
+import Bazar from './Routes/Categories/Bazar.jsx';
+import Blanqueria from './Routes/Categories/Blanqueria';
+import Camping from './Routes/Categories/Camping';
+import Electrodomesticos from './Routes/Categories/Electrodomesticos';
+import Varios from './Routes/Categories/Varios';
+
 import Box from '@mui/material/Box';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
@@ -34,6 +40,13 @@ function App() {
             <Route path="/detalles" element={<Detalles />}/>
             <Route path="/nosotros" element={<SobreNosotros />}/>
             <Route path="/contacto" element={<Contacto />}/>
+            
+            <Route path="/bazar" element={<Bazar />}/>
+            <Route path="/blanqueria" element={<Blanqueria />}/>
+            <Route path="/camping" element={<Camping />}/>
+            <Route path="/electrodomesticos" element={<Electrodomesticos />}/>
+            <Route path="/varios" element={<Varios />}/>
+            
             <Route path="*" element={<Navigate to='/inicio' />} />
           </Routes>
           <Footer />

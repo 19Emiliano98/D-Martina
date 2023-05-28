@@ -83,54 +83,64 @@ const Sidebar = () => {
                 </List>
                 <Divider />
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ mt: -1, mb: -4 }}>
-                            <ListItemIcon>
-                                <CheckroomIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Bazar' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link href="/bazar" style={{ textDecoration: 'none', color: 'black' }}>
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ mt: -1, mb: -4 }}>
+                                <ListItemIcon>
+                                    <CheckroomIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Bazar' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ mb: -4 }}>
-                            <ListItemIcon>
-                                <BedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Blanquería' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link href="/blanqueria" style={{ textDecoration: 'none', color: 'black' }}>
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ mb: -4 }}>
+                                <ListItemIcon>
+                                    <BedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Blanquería' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ mb: -4 }}>
-                            <ListItemIcon>
-                                <CabinIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Camping' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link href="/camping" style={{ textDecoration: 'none', color: 'black' }}>
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ mb: -4 }}>
+                                <ListItemIcon>
+                                    <CabinIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Camping' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ mb: -4 }}>
-                            <ListItemIcon>
-                                <KitchenIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Electrodomésticos' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link href="/electrodomesticos" style={{ textDecoration: 'none', color: 'black' }}>
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ mb: -4 }}>
+                                <ListItemIcon>
+                                    <KitchenIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Electrodomésticos' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ mb: -4 }}>
-                            <ListItemIcon>
-                                <MoreVertIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Varios' />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link href="/varios" style={{ textDecoration: 'none', color: 'black' }}>
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ mb: -4 }}>
+                                <ListItemIcon>
+                                    <MoreVertIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Varios' />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
             </div>
         </div>
