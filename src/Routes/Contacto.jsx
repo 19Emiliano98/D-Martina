@@ -1,23 +1,13 @@
 import * as React from 'react';
 
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-
+import { Box, Stack, Card, CardContent, Typography, Divider } from '@mui/material';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-
-import DrawerStucked from '../components/DrawerStucked.jsx';
 import TitleBorder from '../components/tools/TitleBorder.jsx';
 import BackButton from '../components/tools/BackButton.jsx';
-
 
 const Contacto = () => {
     return (
         <Box>
-            <DrawerStucked />
             <Box sx={{
                 display: 'flex', justifyContent: 'center',
                 mt: 6, ml: 23
@@ -64,6 +54,6 @@ const Contacto = () => {
             </Box>
         </Box>
     )
-}
+};
 
-export default Contacto
+export default Contacto;

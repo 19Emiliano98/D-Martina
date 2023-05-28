@@ -1,15 +1,12 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import List from '@material-ui/core/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@mui/material/Divider';
+import { ListItemButton, Divider, Link } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 
-import Link from '@mui/material/Link';
+/* ----------- */
+/* ---Icons--- */
+/* ----------- */
 import HomeIcon from '@mui/icons-material/Home';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import MailIcon from '@mui/icons-material/Mail';
@@ -18,14 +15,15 @@ import BedIcon from '@mui/icons-material/Bed';
 import CabinIcon from '@mui/icons-material/Cabin';
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+/* ----------- */
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex', position: "absolute",
-        paddingBottom: 150,
-        borderRight: "1px solid black"
+        paddingBottom: 450,
+        borderRight: "1px solid #dcd9e8"
     },
     appBar: {
         width: `calc(100% - ${drawerWidth}px)`,
@@ -49,8 +47,8 @@ const Sidebar = () => {
             <div className={classes.drawer}>
                 <List>
                     <Link href="/inicio" style={{ textDecoration: 'none', color: 'black' }}>
-                        <ListItem button>
-                            <ListItemButton>
+                        <ListItem>
+                            <ListItemButton sx={{ mt: -1, mb: -4 }}>
                                 <ListItemIcon>
                                     <HomeIcon />
                                 </ListItemIcon>
@@ -62,7 +60,7 @@ const Sidebar = () => {
                 <List>
                     <Link href="/nosotros" style={{ textDecoration: 'none', color: 'black' }}>
                         <ListItem disablePadding>
-                                <ListItemButton>
+                                <ListItemButton sx={{ mb: -4 }}>
                                     <ListItemIcon>
                                         <AutoAwesomeIcon />
                                     </ListItemIcon>
@@ -74,7 +72,7 @@ const Sidebar = () => {
                 <List>
                     <Link href="/contacto" style={{ textDecoration: 'none', color: 'black' }}>
                         <ListItem disablePadding>
-                            <ListItemButton>
+                            <ListItemButton sx={{ mb: -1 }}>
                                 <ListItemIcon>
                                     <MailIcon />
                                 </ListItemIcon>
@@ -86,7 +84,7 @@ const Sidebar = () => {
                 <Divider />
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton sx={{ mt: -1, mb: -4 }}>
                             <ListItemIcon>
                                 <CheckroomIcon />
                             </ListItemIcon>
@@ -96,7 +94,7 @@ const Sidebar = () => {
                 </List>
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton sx={{ mb: -4 }}>
                             <ListItemIcon>
                                 <BedIcon />
                             </ListItemIcon>
@@ -106,7 +104,7 @@ const Sidebar = () => {
                 </List>
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton sx={{ mb: -4 }}>
                             <ListItemIcon>
                                 <CabinIcon />
                             </ListItemIcon>
@@ -116,7 +114,7 @@ const Sidebar = () => {
                 </List>
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton sx={{ mb: -4 }}>
                             <ListItemIcon>
                                 <KitchenIcon />
                             </ListItemIcon>
@@ -126,7 +124,7 @@ const Sidebar = () => {
                 </List>
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton sx={{ mb: -4 }}>
                             <ListItemIcon>
                                 <MoreVertIcon />
                             </ListItemIcon>
@@ -135,9 +133,6 @@ const Sidebar = () => {
                     </ListItem>
                 </List>
             </div>
-            <AppBar position="fixed" className={classes.appBar}>
-                {/* Contenido de la barra superior */}
-            </AppBar>
         </div>
     );
 };

@@ -1,21 +1,13 @@
 import * as React from 'react';
 
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-
-import DrawerStucked from '../components/DrawerStucked.jsx';
+import { Box, Stack, Card, CardContent, Typography } from '@mui/material';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import TitleBorder from '../components/tools/TitleBorder.jsx';
 import BackButton from '../components/tools/BackButton.jsx';
-
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 const SobreNosotros = () => {
     return (
         <Box>
-            <DrawerStucked />
             <Box sx={{
                 display: 'flex', justifyContent: 'center',
                 mt: 6, ml: 23

@@ -76,7 +76,7 @@ export default function ImgMediaCard() {
         <Box>
             <Box sx={{
                 display: 'flex', justifyContent: 'center', flexWrap: 'wrap',
-                mt: 4, ml: 29
+                mt: 6, ml: 32
             }}>
                 {cardsRender}
             </Box>

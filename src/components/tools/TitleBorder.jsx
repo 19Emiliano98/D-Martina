@@ -17,6 +17,7 @@ export default function TitleBorder(content) {
         >
         <Card sx={{ 
             width: 800, height: 35,
+            mt: 1,
             pb: 2,
             boxShadow: 3, borderRadius: '5px'
         }}>
