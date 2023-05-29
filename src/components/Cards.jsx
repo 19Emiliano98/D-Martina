@@ -5,7 +5,8 @@ import Pagination from './tools/Pagination.jsx';
 import { Box, Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-export default function ImgMediaCard() {
+export default function ImgMediaCard(filter) {
+    const { catFilter } = filter;
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
@@ -19,6 +20,30 @@ export default function ImgMediaCard() {
     
     const totalPages = Math.ceil(products.length / itemsPerPage);
     
+    useEffect(() => {
+        getProducts().then(function(result) {
+            const dataFetch = result.data.producto;
+            if(catFilter == 'Bazar'){
+                const res = dataFetch.filter(x => x.prod_cate_id == 1);
+                setProducts(res)
+            }else if(catFilter == 'Blanqueria'){
+                const res = dataFetch.filter(x => x.prod_cate_id == 2);
+                setProducts(res)
+            }else if(catFilter == 'Camping'){
+                const res = dataFetch.filter(x => x.prod_cate_id == 3);
+                setProducts(res)
+            }else if(catFilter == 'Electrodomesticos'){
+                const res = dataFetch.filter(x => x.prod_cate_id == 4);
+                setProducts(res)
+            }else if(catFilter == 'Varios'){
+                const res = dataFetch.filter(x => x.prod_cate_id == 5);
+                setProducts(res)
+            }else{
+                setProducts(dataFetch)
+            }
+        });
+    }, []);
+
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
@@ -26,12 +51,6 @@ export default function ImgMediaCard() {
     const handlePageChange = (event, page) => {
         setCurrentPage(page);
     };
-    
-    useEffect(() => {
-        getProducts().then(function(result) {
-            setProducts(result.data.producto)
-        });
-    }, []);
     
     const cardsRender = currentItems.map(( p, index ) => 
         <Card 

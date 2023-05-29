@@ -4,15 +4,17 @@ import Cards from '../../components/Cards.jsx';
 import Box from '@mui/material/Box';
 
 function Electrodomesticos() {
+    const cat = 'Electrodomesticos';
+
     return (
         <div>
             <Box sx={{
                 display: 'flex', justifyContent: 'center',
                 mt: 3, ml: 23
             }}>
-                <TitleBorder content={"Electrodomesticos"}/>
+                <TitleBorder content={cat}/>
             </Box>
-            <Cards />
+            <Cards catFilter={cat}/>
         </div>
     );
 }
