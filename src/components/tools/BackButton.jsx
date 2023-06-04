@@ -24,7 +24,8 @@ export default function ContainedButtons() {
         <ThemeProvider theme={theme}>
             <Button 
                 sx={{ 
-                    mr: 4, px: 8, 
+                    height: '53px',
+                    mr: 3, mt: 0.9, px: 8, 
                     borderRadius: '4px',
                     backgroundColor: 'white', color: 'black'
                 }} 

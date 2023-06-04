@@ -12,7 +12,7 @@ function Home() {
             }}>
                 <TitleBorder content={"Productos destacados"}/>
             </Box>
-            <Cards />
+                <Cards />
         </Box>
     );
 }

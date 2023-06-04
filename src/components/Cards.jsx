@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 
 import Pagination from './tools/Pagination.jsx';
@@ -43,8 +44,8 @@ export default function ImgMediaCard(filter) {
             }
         });
     }, []);
-
-    const indexOfLastItem = currentPage * itemsPerPage;
+	
+	const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
     
@@ -85,7 +86,13 @@ export default function ImgMediaCard(filter) {
                 </Button>
                 </CardActions>
                 <CardActions>
-                    <Button href="/detalles" sx={{ color: '#241623' }} size="small">Detalles</Button>
+                    <Button 
+                        href="/detalles" 
+                        sx={{ color: '#241623' }} 
+                        size="small"
+                        >
+                            Detalles
+                    </Button>
                 </CardActions>
             </Box>
         </Card>
