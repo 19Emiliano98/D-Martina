@@ -37,7 +37,7 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path="/inicio" element={<Home />}/>
-            <Route path="/detalles" element={<Detalles />}/>
+            <Route path="/detalles/:data" element={<Detalles />}/>
             <Route path="/nosotros" element={<SobreNosotros />}/>
             <Route path="/contacto" element={<Contacto />}/>
             

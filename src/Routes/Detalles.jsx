@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useParams } from 'react-router-dom';
 
 import { Box, Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -6,6 +7,9 @@ import TitleBorder from '../components/tools/TitleBorder.jsx';
 import BackButton from '../components/tools/BackButton.jsx';
 
 const Detalles = () => {
+    let { data } = useParams();
+    console.log(data);
+    
     return (
         <Box>
             <Box sx={{
@@ -54,9 +58,9 @@ const Detalles = () => {
                             </Typography>
                         </Button>
                     </CardActions>
-                    <CardActions>
+                    {/* <CardActions>
                         <Button href="/detalles" sx={{ color: '#241623' }} size="small">Detalles</Button>
-                    </CardActions>
+                    </CardActions> */}
                 </Card>
             </Box>
         </Box>

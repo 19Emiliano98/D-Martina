@@ -86,13 +86,13 @@ export default function ImgMediaCard(filter) {
                 </Button>
                 </CardActions>
                 <CardActions>
-                    <Button 
-                        href="/detalles" 
-                        sx={{ color: '#241623' }} 
-                        size="small"
-                        >
-                            Detalles
-                    </Button>
+                        <Button 
+                            href={`/detalles/${p.prod_slug}`} 
+                            sx={{ color: '#241623' }} 
+                            size="small"
+                            >
+                                Detalles
+                        </Button>
                 </CardActions>
             </Box>
         </Card>
