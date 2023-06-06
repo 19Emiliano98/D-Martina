@@ -23,50 +23,67 @@ const Detalles = () => {
         
     useEffect(() => {
         getProducts().then((res) => {
-            setProduct(res.data.producto);               
+            setProduct([res.data.producto]);               
         });
     }, []);
 
-    const test = [product]
-console.log(test);
-
-    const cardsRender = test.map(( p, index ) => 
-        <Card sx={{ width: 1000, height: 600, backgroundColor: '#D0CD9466' }} key={index}>
+    const cardsRender = product.map(( p, index ) => 
+        <Card 
+            sx={{ 
+                display:'flex',
+                width: 1000, height: 500, 
+                backgroundColor: '#D0CD9466' 
+            }} 
+            key={ index }
+        >
             <CardMedia
-                sx={{ height: 140 }}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="green iguana"
+                component="img"
+                height="500"
+                sx={{ objectFit: "contain", minWidth: 500 }}
+                image={`https://dmartinablancohogar.com.ar/${p.imagen[0].ruta}`}
+                title={p.nombre}
             />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {p.nombre}
-                </Typography>
-                <Typography sx={{mb: 2}} variant="body2" color="text.secondary">
-                    Descripción del producto:
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {p.descripcion}
-                </Typography>
-            </CardContent>
-            <CardActions 
-                sx={{ 
-                    background: '#241623', borderRadius: '10px' 
-                }}>
-                <Button 
-                    sx={{ 
-                        color: '#FFFFFF', px: '60px'
-                    }} 
-                    size="small"
-                >
-                    <WhatsAppIcon sx={{ fontSize: '1rem', mb: '2px', mr: '5px' }}/>
-                    <Typography sx={{ fontSize: '0.75rem' }} variant='caption'>
-                        Whatsapp
+            <Box
+                sx={{
+                    display: 'flex', flexDirection: 'column',
+                    alignItems: 'center',
+                    mt: 7
+                }}
+            >
+                <CardContent>
+                    <Typography 
+                        sx={{ 
+                            textAlign: 'center', mb: 3
+                        }}
+                        gutterBottom variant="h5" 
+                        component="div">
+                        {p.nombre}
                     </Typography>
-                </Button>
-            </CardActions>
-            {/* <CardActions>
-                <Button href="/detalles" sx={{ color: '#241623' }} size="small">Detalles</Button>
-            </CardActions> */}
+                    <Typography sx={{mb: 2}} variant="body2" color="text.secondary">
+                        Descripción del producto:
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {p.descripcion}
+                    </Typography>
+                </CardContent>
+                <CardActions 
+                    sx={{ 
+                        background: '#241623', borderRadius: '10px', 
+                        position: 'absolute', mt: 38
+                    }}>
+                    <Button 
+                        sx={{ 
+                            color: '#FFFFFF', px: '60px'
+                        }} 
+                        size="small"
+                    >
+                        <WhatsAppIcon sx={{ fontSize: '1rem', mb: '2px', mr: '5px' }}/>
+                        <Typography sx={{ fontSize: '0.75rem' }} variant='caption'>
+                            Whatsapp
+                        </Typography>
+                    </Button>
+                </CardActions>
+            </Box>
         </Card>
     )
 

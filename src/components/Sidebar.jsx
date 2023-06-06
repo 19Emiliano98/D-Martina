@@ -22,7 +22,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex', position: "absolute",
-        paddingBottom: 450,
+        height: '93vh',
         borderRight: "1px solid #dcd9e8"
     },
     appBar: {
