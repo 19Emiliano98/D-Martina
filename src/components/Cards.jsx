@@ -17,6 +17,9 @@ export default function ImgMediaCard(filter) {
             .then(function(response) {
                 return response.json();
             })
+            .catch(err => {
+                console.log('No se encuentra el elemento: ' + err);
+            })
         }
     
     const totalPages = Math.ceil(products.length / itemsPerPage);
