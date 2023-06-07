@@ -7,8 +7,11 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TitleBorder from '../components/tools/TitleBorder.jsx';
 import BackButton from '../components/tools/BackButton.jsx';
 
+import Relacionados from '../components/Relacionados.jsx';
+
 const Detalles = () => {
     const [product, setProduct] = useState([]);
+    const [relacionados, setRelacionados] = useState([]);
     let { data } = useParams();
     
     async function getProducts () {
@@ -23,7 +26,8 @@ const Detalles = () => {
         
     useEffect(() => {
         getProducts().then((res) => {
-            setProduct([res.data.producto]);               
+            setProduct([res.data.producto]);
+            setRelacionados(res.data.relacionado);           
         });
     }, []);
 
@@ -102,6 +106,16 @@ const Detalles = () => {
                 mt: 5, ml: 23
             }}>
                 {cardsRender}
+            </Box>
+
+            <Box sx={{
+                display: 'flex', flexDirection: 'column',
+                justifyContent: 'center',
+                textAlign: 'center',
+                width: 300,
+                ml: '100vh'
+            }}>
+                <Relacionados relacionados={relacionados}/>
             </Box>
         </Box>
     )
